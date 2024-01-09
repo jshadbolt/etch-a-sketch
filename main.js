@@ -23,7 +23,8 @@ function createSquares(gridSize) {
         for (let j = 0; j < gridSize; j++) {
             let square = document.createElement('div')
             square.className = 'square'
-            square.classList.add('square-border')
+            square.classList.add('grid')
+            square.classList.toggle('grid')
             addDraw(square)
             column.appendChild(square)
         }
@@ -66,7 +67,7 @@ slider.addEventListener('input', () => {
 toggleGridButton.addEventListener('click', () => {
     let squares = document.querySelectorAll('.square')
     squares.forEach(square => {
-        square.classList.toggle('square-border')
+        square.classList.toggle('grid')
     })
 })
 
