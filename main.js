@@ -8,6 +8,14 @@ const colorPickerButton = document.getElementById('color-picker-button')
 createGrid(DEFAULTSIZE)
 let squares = document.querySelectorAll('.square')
 
+var mouseDown = 0;
+document.body.onmousedown = function() { 
+  ++mouseDown;
+}
+document.body.onmouseup = function() {
+  --mouseDown;
+}
+
 function createGrid(gridSize) {
     for (let i = 0; i < gridSize; i++) {
         let column = document.createElement('div')
@@ -17,7 +25,9 @@ function createGrid(gridSize) {
             square.className = 'square'
             square.classList.add('square-border')
             square.addEventListener('mouseover', () => {
-                // square.style.backgroundColor = 'black'
+                if (mouseDown) {
+                square.style.backgroundColor = 'black'
+                }
             })
             column.appendChild(square)
         }
