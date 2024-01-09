@@ -5,9 +5,9 @@
 }
 
 body {
-    /* height: 100vh;  */
-    background-color: rgb(78, 31, 64);
+    background-color: rgb(250, 250, 250);
     padding: 50px 0;
+    font-family: 'Inter', sans-serif;
 }
 
 .container  {
@@ -21,6 +21,7 @@ body {
     width: 500px;
     height: 500px;
     display: flex;
+    box-shadow: 0px 5px 10px -3px rgba(0,0,0,0.75);
 }
 
 .column {
@@ -32,6 +33,9 @@ body {
 .square {
     flex: 1;
     background-color: rgb(216, 216, 216);
+}
+
+.square-border {
     border: 1px solid aquamarine;
 }
 
@@ -47,15 +51,26 @@ body {
     border: 1px solid black;
 }
 
-#sizeSlider {
+.slide-container {
+    position: relative;
+}
+
+#slider {
     position: absolute;
     top: 50%;
-    left: 25%;
+    right: 25%;
     transform: rotate(-90deg);
 }
 
+#slider-output {
+    position: absolute;
+    top: 50%;
+    right: 100px;
+    font-weight: 700;
+}
+
 .control-container  {
-    margin-top: 10px;
+    margin-top: 20px;
     display: flex;
     justify-content: center;
 }
@@ -65,6 +80,8 @@ body {
     height: 100px;
     display: flex;
     justify-content: space-evenly;
+    font-family: 'Inter', sans-serif;
+    gap: 5px;
 }
 
 button {
@@ -72,5 +89,6 @@ button {
     background-color: transparent;
     font-size: 20px;
     flex: 1;
-
+    border-radius: 15px;
 }
+
