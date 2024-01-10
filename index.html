@@ -15,17 +15,28 @@
         <div class="slide-container">
             <input id="slider" type="range" value="16" min="1" max="48"/>
             <div id="slider-output"></div>
+            <input id="swatch" type="color" value="#000000"/>
         </div>
-        <div class="canvas"></div>
+        <div class="canvas-container">
+            <div class="canvas"></div>
+            <div class="control-container">
+                <div class="controls">
+                        <button id="toggle-grid-button">Toggle Grid</button>
+                        <button id="clear-canvas-button">Clear Canvas</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="info-container">
+        <div class="title">Etch-A-Sketch</div>
+        <div class="credit">
+            <div class="name">James Shadbolt Copyright © 2024 |</div>
+            <div class="github-link"><a href="https://github.com/jshadbolt" target="_blank">Github</a></div>
+            <div class="github-logo"><img class="github" src="./img/github logo.png" alt="github logo"></div>
+        </div>
     </div>
 
-    <div class="control-container">
-        <div class="controls">
-                <button id="toggle-grid-button">Toggle Grid</button>
-                <button id="clear-canvas-button">Clear Canvas</button>
-                <button id="color-picker-button">Color</button>
-        </div>
-    </div>
+
     
 </body>
 </html>

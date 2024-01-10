@@ -8,6 +8,8 @@ body {
     background-color: rgb(250, 250, 250);
     padding: 50px 0;
     font-family: 'Inter', sans-serif;
+    /* position: relative; */
+
 }
 
 .container  {
@@ -15,6 +17,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-right: 300px;
 }
 
 .canvas {
@@ -80,15 +83,73 @@ body {
     height: 100px;
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
     font-family: 'Inter', sans-serif;
     gap: 5px;
 }
 
 button {
-    padding: 10px 20px;
-    background-color: transparent;
-    font-size: 20px;
     flex: 1;
-    border-radius: 15px;
+    height: 100%;
+    padding: 10px 20px;
+    background-color: white;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 1px solid aquamarine;
+    font-weight: 100;
+    font-family: 'Inter', sans-serif;
+    color: rgb(132, 116, 135);
 }
 
+button:hover {
+    background-color: rgba(252, 255, 235, 0.597);
+}
+
+.info-container {
+    height: 500px;
+    width: 500px;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    width: 100%;
+    height: 100%;
+    font-size: 100px;
+    font-weight: 700;
+    line-height: 100px;
+    color: rgb(52, 51, 51);
+}
+
+.credit {
+    display: flex;
+    gap: 10px;
+    color: rgb(132, 116, 135);
+
+}
+
+a {
+    text-decoration: none;
+    color: rgb(132, 116, 135);
+}
+
+.github {
+    width: 20px;
+    height: 20px;
+}
+
+#swatch {
+    border: none;
+    background: none;
+    color: none;
+}
+
+input[type="color" i]::-webkit-color-swatch {
+    border: none;
+    position: relative;
+    top: 110px;
+    right: 52px;
+}
