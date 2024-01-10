@@ -131,9 +131,10 @@ button:hover {
 
 }
 
-a {
+.github-link > a {
     text-decoration: none;
     color: rgb(132, 116, 135);
+    font-weight: 700;
 }
 
 .github {
@@ -153,3 +154,4 @@ input[type="color" i]::-webkit-color-swatch {
     top: 110px;
     right: 52px;
 }
+
