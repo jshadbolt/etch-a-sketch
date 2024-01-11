@@ -5,14 +5,21 @@ const toggleGridButton = document.getElementById('toggle-grid-button')
 const clearCanvasButton = document.getElementById('clear-canvas-button')
 const colorPickerButton = document.getElementById('color-picker-button')
 const swatch = document.getElementById('swatch')
+let pseudoSwatch = document.querySelector('-webkit-color-swatch')
 const slider = document.getElementById('slider')
 const sliderOutput = document.getElementById('slider-output')
-let currentcolor = DEFAULTCOLOR
+const rainbowButton = document.getElementById('rainbow-button')
+const controlButtons = document.querySelectorAll('.toggleAble')
+let currentColor = DEFAULTCOLOR
 let gridState = 0
+let state = 0
+let intervalId;
 
-function updateCurrentColor() {
-    currentcolor = swatch.value
-    console.log(currentcolor)
+// swatch.style.
+
+function updatecurrentColor(source) {
+    currentColor = source
+    console.log(currentColor)
 }
 
 var mouseDown = 0;
@@ -47,11 +54,11 @@ function addDraw() {
     squares.forEach((square) => {
         square.addEventListener('mouseover', () => {
             if (mouseDown) {
-                square.style.backgroundColor = currentcolor
+                square.style.backgroundColor = currentColor
             }
         }) 
         square.addEventListener('mousedown', () => {
-            square.style.backgroundColor = currentcolor
+            square.style.backgroundColor = currentColor
         })    
     })
 }
@@ -76,7 +83,7 @@ function toggleGrid() {
 }
 
 swatch.addEventListener('input', () => {
-    updateCurrentColor()
+    updatecurrentColor(swatch.value)
 })
 
 slider.addEventListener('mouseup', () => {
@@ -96,5 +103,60 @@ toggleGridButton.addEventListener('click', () => {
     toggleGrid()
 })
 
-createSquares(DEFAULTSIZE)
+rainbowButton.addEventListener('click', () => {
+    rainbowMode(rainbowButton, 500)
+  });
 
+Array.from(controlButtons).forEach(function(button) {
+button.addEventListener('click', () => {
+    button.classList.toggle('darken')
+})
+});
+
+function updateButtonState() {
+    state === 0 ? state = 1 : state = 0 ;
+}
+
+function rainbowMode(target, intervalTime) {
+    updateButtonState()
+    changeColor(target)
+    if (state === 1) {
+        intervalId = setInterval(() => {
+            changeColor(target)
+        }, intervalTime);
+    }
+    if (state === 0) {
+        clearInterval(intervalId);
+    }
+}
+
+function changeColor(target) {
+    array = []
+    for (let i = 0; i < 3; i++) {
+        array.push(randomRgbValue(0, 255))
+    }
+    let rgbValue = `rgb(${array.join(`,`)})`
+    currentColor = rgbValue
+    swatch.value = rgbToHex(array)
+}
+
+function randomRgbValue(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function valueToHex(c) {
+    var hex = c.toString(16);
+    return hex.length === 1 ? '0' + hex : hex;
+}
+
+function rgbToHex(array) {
+    let hexCode = `#${(valueToHex(array[0]) + valueToHex(array[1]) + valueToHex(array[2]))}`;
+    console.log(hexCode)
+    return hexCode
+    }
+
+
+
+createSquares(DEFAULTSIZE)

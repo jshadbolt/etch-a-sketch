@@ -17,7 +17,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-right: 300px;
+    /* padding-right: 300px; */
 }
 
 .canvas {
@@ -54,23 +54,49 @@ body {
     border: 1px solid black;
 }
 
-.slide-container {
-    position: relative;
+.left-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 300px;
+    position: absolute;
+    left: 30%;
+}
+
+.slider-container {
+    /* background-color: pink; */
+    height: 100%;
 }
 
 #slider {
-    position: absolute;
-    top: 50%;
-    right: 25%;
-    transform: rotate(-90deg);
+    height: 100%;
+    /* top: 40%; */
+    transform: rotate(270deg);
 }
 
 #slider-output {
-    position: absolute;
-    top: 50%;
-    right: 100px;
     font-weight: 700;
+    position: absolute;
+    top: 43%;
+    left: 20px;
 }
+
+.swatch-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#swatch {
+    border: none;
+    background: none;
+    color: none;
+}
+
+input[type="color" i]::-webkit-color-swatch {
+    border: none;
+}
+ 
 
 .control-container  {
     margin-top: 20px;
@@ -92,26 +118,26 @@ button {
     flex: 1;
     height: 100%;
     padding: 10px 20px;
-    background-color: white;
+    background-color: rgb(250,250,250);
     font-size: 20px;
     border-radius: 10px;
-    border: 1px solid aquamarine;
+    border: 1px solid rgb(111, 188, 163);
     font-weight: 100;
     font-family: 'Inter', sans-serif;
-    color: rgb(132, 116, 135);
+    color: aquamarine;
 }
 
 button:hover {
-    background-color: rgba(252, 255, 235, 0.597);
+    /* background-color: rgba(252, 255, 235, 0.597); */
 }
 
 .info-container {
-    height: 500px;
+    height: 300px;
     width: 500px;
-    position: absolute;
-    top: 50px;
-    right: 50px;
+    margin: auto;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
 }
 
@@ -122,10 +148,16 @@ button:hover {
     font-weight: 700;
     line-height: 100px;
     color: rgb(52, 51, 51);
+    display: flex;
+    /* justify-content: center;/ */
+    text-align: center;
 }
 
 .credit {
+    margin-top: 200px;
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 10px;
     color: rgb(132, 116, 135);
 
@@ -142,16 +174,6 @@ button:hover {
     height: 20px;
 }
 
-#swatch {
-    border: none;
-    background: none;
-    color: none;
+.darken {
+    background-color: rgba(41, 41, 41, 0.055);
 }
-
-input[type="color" i]::-webkit-color-swatch {
-    border: none;
-    position: relative;
-    top: 110px;
-    right: 52px;
-}
-
