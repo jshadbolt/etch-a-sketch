@@ -58,14 +58,15 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 300px;
+    height: 200px;
     position: absolute;
     left: 30%;
+    bottom: 25%;
 }
 
 .slider-container {
-    /* background-color: pink; */
     height: 100%;
+    position: relative;
 }
 
 #slider {
@@ -77,7 +78,7 @@ body {
 #slider-output {
     font-weight: 700;
     position: absolute;
-    top: 43%;
+    top: 45%;
     left: 20px;
 }
 

@@ -1,5 +1,5 @@
 const DEFAULTSIZE = 16
-const DEFAULTCOLOR = '#000000'
+const DEFAULTCOLOR = '#748BFB'
 const canvas = document.querySelector('.canvas')
 const toggleGridButton = document.getElementById('toggle-grid-button')
 const clearCanvasButton = document.getElementById('clear-canvas-button')
@@ -14,8 +14,6 @@ let currentColor = DEFAULTCOLOR
 let gridState = 0
 let state = 0
 let intervalId;
-
-// swatch.style.
 
 function updatecurrentColor(source) {
     currentColor = source
